@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src="assets/javascript/game.js" type="text/javascript"></script>
+
+    <style>
+
+body {
+    background-color: white;
+    padding-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    background-color: #19b6ff;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds-light.png"); 
+}
+
+#title-text {
+    font-family: 'Press Start 2P', cursive;
+    width: 100vw;
+    z-index: 2;
+    font-size: 8vh;
+    padding: 0;
+    position: absolute;
+    left: 0;
+}
+
+.container { 
+    text-align: center;
+}
+
+h1,h2,h3,
+h4,h5,h6 {
+    padding: 8px;
+}
+
+#title-image {
+    padding: 0;
+    margin: auto;
+}
+
+#gameover-image, #youwin-image { 
+    display: block;
+    margin: 0 auto;
+}
+
+#currentWord {
+    letter-spacing: 10px;
+}
+
+#pressKeyTryAgain, 
+#gameover-image, 
+#youwin-image { 
+    display: none;
+}
+
+#youwin-image {
+    width: 80%;
+    height: auto;
+}
+
+.half-column {
+    padding-top: 20px;
+    border: 3px solid whitesmoke;
+    text-align: center;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    min-height: 40vh;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+    </style>
+    
+    <title>Word Guessing Game</title>
+
+</head>
+
+<body>
+
+        <div class="container">
+
+                <div class="row">
+
+                    <p id="title-text"> Animal Hangman </p>
+
+                    <img id="title-image" src="assets/images/animals.gif" alt="Hangman Title Image" />
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 half-column">
+
+                        <img id="youwin-image" src="http://pixelartmaker.com/art/681e156ae971bd4.png" alt="Winning Image" />
+
+                        <img id="gameover-image" src="assets/images/lose.gif_c200" alt="Game Over Image" />
+
+                        <h2 id="pressKeyTryAgain">Press Any Key to Reset the Game</h2>
+
+                    </div>
+
+                    <div class="col-md-6 half-column">
+
+                        <h2>Guess the word using any key!</h2>
+
+                        <h4>Wins</h4>
+
+                        <h4 id="totalWins"></h4>
+
+                        <h4>Current Word</h4>
+
+                        <h3 id="currentWord"></h3>
+
+                        <h4>Guesses Remaining</h4>
+
+                        <h4 id="remainingGuesses"></h4>
+
+                        <h4>Letters Guessed</h4>
+
+                        <div id="guessedLetters"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        
+        <script>
+            
+            resetGame();
+
+            updateDisplay();
+
+        </script>
+    
+</body>
+
+</html>
